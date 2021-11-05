@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="ar.mak.BluesMusic">
-<!--        <constructor-arg value="Artem"/>-->
+          class="ar.mak.RockMusic">
+        <!--        <constructor-arg value="Artem"/>-->
+
+    </bean>
+    <bean id="musicPlayer"
+          class="ar.mak.MusicPlayer">
+        <!--        <constructor-arg ref="musicBean"/>-->
+        <property name="music" ref="musicBean"/>
+<!--        setMusic = bean ->> music // camel case -->
     </bean>
 
 </beans>
