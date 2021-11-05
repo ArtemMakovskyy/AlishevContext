@@ -4,19 +4,20 @@ package ar.mak;
 import org.springframework.beans.factory.annotation.Value;
 
 public class TestBean {
-//    @Value("Artem Makovskyy")
-    private String name;
-
-    public TestBean(String name) {
-        this.name = name;
-        System.out.println("in TestBean(String name)");
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+////    @Value("Artem Makovskyy")
+//    private String name;
+//
+//    public TestBean(String name) {
+//        this.name = name;
+//        System.out.println("in TestBean(String name)");
+//    }
+//
+//    public String getName() {
+//        System.out.println(name);
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 }
