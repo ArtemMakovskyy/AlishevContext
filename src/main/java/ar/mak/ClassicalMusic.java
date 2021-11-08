@@ -9,8 +9,8 @@ public class ClassicalMusic implements Music {
     }
 
     //создаем статичный метод для вызова объекта
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
+    public static ar.mak.ClassicalMusic getClassicalMusic() {
+        return new ar.mak.ClassicalMusic();
     }
     void init(){
         System.out.println("init classical");

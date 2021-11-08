@@ -1,8 +1,9 @@
-package ar.mak;
+package ar.mak.AnnoXML;
 
+import ar.mak.Music;
 import org.springframework.stereotype.Component;
 
-@Component("musicBean")
+@Component
 public class RockMusic implements Music {
     @Override
     public String getSong() {
