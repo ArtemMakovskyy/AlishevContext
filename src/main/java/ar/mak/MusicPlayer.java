@@ -50,6 +50,12 @@ public class MusicPlayer {
     public void playMusic() {
         System.out.println("Playing: " + music.getSong());
     }
+    private void init(){
+        System.out.println("!!!init Music player");
+    }
+    private void destroy(){
+        System.out.println("!!!destroy Music Player");
+    }
 
 
 }

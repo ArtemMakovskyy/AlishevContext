@@ -16,23 +16,30 @@
         <!--        <constructor-arg value="Artem"/>-->
     </bean>
     <bean id="musicBean2"
-          class="ar.mak.ClassicalMusic">
+          class="ar.mak.ClassicalMusic"
+          factory-method="getClassicalMusic"
+          init-method="init"
+          destroy-method="destroy">
     </bean>
     <bean id="musicBean3"
           class="ar.mak.RockMusic">
     </bean>
 
-
     <bean id="musicPlayer"
-          class="ar.mak.MusicPlayer">
+          class="ar.mak.MusicPlayer"
+          scope="singleton"
+          init-method="init"
+          destroy-method="destroy">
+
         <!--        <constructor-arg ref="musicBean"/>-->
-        <property name="music" ref="musicBean1"/>
+        <property name="music" ref="musicBean2"/>
         <!--        setMusic = bean ->> music // camel case -->
         <!--        <property name="name" value="Some name"/>-->
         <!--        <property name="volume" value="50"/>-->
         <!--        чтоб поместить значение в xml-->
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
+        <!--        https://www.youtube.com/watch?v=dBxRmUH3Af8-->
         <property name="listMusic">
             <list>
                 <ref bean="musicBean1"/>
@@ -40,7 +47,6 @@
                 <ref bean="musicBean3"/>
             </list>
         </property>
-
 
     </bean>
 
