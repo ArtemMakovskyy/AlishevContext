@@ -7,19 +7,39 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
-          class="ar.mak.RockMusic">
-        <!--        <constructor-arg value="Artem"/>-->
 
+    <!--    чтоб импортировать пропертис -->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="musicBean1"
+          class="ar.mak.BluesMusic">
+        <!--        <constructor-arg value="Artem"/>-->
     </bean>
+    <bean id="musicBean2"
+          class="ar.mak.ClassicalMusic">
+    </bean>
+    <bean id="musicBean3"
+          class="ar.mak.RockMusic">
+    </bean>
+
+
     <bean id="musicPlayer"
           class="ar.mak.MusicPlayer">
         <!--        <constructor-arg ref="musicBean"/>-->
-        <property name="music" ref="musicBean"/>
-<!--        setMusic = bean ->> music // camel case -->
-        <property name="name" value="Some name"/>
-        <property name="volume" value="50"/>
-
+        <property name="music" ref="musicBean1"/>
+        <!--        setMusic = bean ->> music // camel case -->
+        <!--        <property name="name" value="Some name"/>-->
+        <!--        <property name="volume" value="50"/>-->
+        <!--        чтоб поместить значение в xml-->
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+        <property name="listMusic">
+            <list>
+                <ref bean="musicBean1"/>
+                <ref bean="musicBean2"/>
+                <ref bean="musicBean3"/>
+            </list>
+        </property>
 
 
     </bean>

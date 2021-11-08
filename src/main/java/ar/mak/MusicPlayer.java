@@ -1,9 +1,23 @@
 package ar.mak;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
     private Music music;
     private String name;
     private int volume;
+    private List<Music> listMusic = new ArrayList<>();
+
+    public void playList (){
+        for (Music v: listMusic){
+            System.out.println(v.getSong());
+        };
+    }
+
+    public void setListMusic(List<Music> listMusic) {
+        this.listMusic = listMusic;
+    }
 
     public String getName() {
         System.out.println(name);
