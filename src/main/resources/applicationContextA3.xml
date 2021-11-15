@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="ar.mak.AnnoXML2"/>
+    <context:component-scan base-package="ar.mak.AnnoXML3Enum"/>
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
 
